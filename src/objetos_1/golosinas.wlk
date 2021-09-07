@@ -9,15 +9,37 @@ object bombon {
 }
 
 object alfajor {
-	// definir
+    var peso = 300
+
+    method precio() { return 12 }
+    method peso() { return peso }
+    method mordisco() { peso = peso * 0.8 }
+    method gusto() { return "chocolate" }
+    method libreGluten() { return false }
 }
 
 object caramelo {
-	// definir
+    var peso = 5
+
+    method precio() { return 1 }
+    method peso() { return peso }
+    method mordisco() { peso = peso - 1 }
+    method gusto() { return "frutilla" }
+    method libreGluten() { return true }
 }
 
 object chupetin {
-	// definir
+    var peso = 7
+
+    method precio() { return 2 }
+    method peso() { return peso }
+    method mordisco() { 
+        if(peso<2){
+            peso = peso - peso * 0.9
+        }
+    }
+    method gusto() { return "naranja" }
+    method libreGluten() { return true }
 }
 
 object oblea {
