@@ -1,13 +1,30 @@
+import golosinas.*
+
 object mariano {
-	// para este objeto no damos pistas
-	// definimos algunos métodos para que compile el test
+	var bolsa = []
 	
-	method comprar(golosina) { /* completar */ }
-	method golosinas() {
-		/* cambiar por la implementacion correcta */ 
-		return [] 
+	method comprar(golosina) { 
+		bolsa.add(golosina)
 	}
 	
-	method probarGolosinas() { /* completar */ }
+	method desechar(golosina) { 
+		bolsa.remove(golosina)
+	}
+	
+	method cantidadDeGolosinas() {
+		return bolsa.size()
+	}
+	
+	method tieneLaGolosina(unaGolosina) {
+		return bolsa.contains(unaGolosina)
+	}
+	
+	method golosinas() { 
+		return bolsa 
+	}
+	
+	method probarGolosinas() {
+		bolsa.forEach({ unaGolosina => unaGolosina.mordisco() }) 
+	}
 }
 
