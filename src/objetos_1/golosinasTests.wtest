@@ -10,11 +10,21 @@ describe "test de bombon" {
 		assert.equals(5, bombon.precio())
 	}
 	
-	test "mordiscos" {
+	test "mordiscos bombon" {
 		bombon.mordisco()
 		assert.equals(11, bombon.peso())
 		bombon.mordisco()
 		assert.equals(7.8, bombon.peso())
+	}
+	
+	test "mordisco chupetin" {
+		chupetin.mordisco()
+		assert.equals(6.3, chupetin.peso())
+		
+		11.times({i => chupetin.mordisco()})
+		
+		assert.that(chupetin.peso() < 2)
+		
 	}
 	
 	test "gusto" {

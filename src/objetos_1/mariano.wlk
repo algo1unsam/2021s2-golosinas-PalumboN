@@ -1,30 +1,28 @@
 import golosinas.*
 
 object mariano {
-	var bolsa = []
-	
-	method comprar(golosina) { 
-		bolsa.add(golosina)
+
+	var golosinas = []
+
+	method comprar(golosina) {
+		golosinas.add(golosina)
 	}
-	
-	method desechar(golosina) { 
-		bolsa.remove(golosina)
+
+	method desechar(golosina) {
+		golosinas.remove(golosina)
 	}
-	
-	method cantidadDeGolosinas() {
-		return bolsa.size()
-	}
-	
-	method tieneLaGolosina(unaGolosina) {
-		return bolsa.contains(unaGolosina)
-	}
-	
-	method golosinas() { 
-		return bolsa 
-	}
-	
+
+	method cantidadDeGolosinas() = golosinas.size()
+
+	method tieneLaGolosina(unaGolosina) = golosinas.contains(unaGolosina)
+
+	method golosinas() = golosinas
+
 	method probarGolosinas() {
-		bolsa.forEach({ unaGolosina => unaGolosina.mordisco() }) 
+		golosinas.forEach({ unaGolosina => unaGolosina.mordisco()})
 	}
+
+	method hayGolosinaSinTACC() = golosinas.any({ unaGolosina => unaGolosina.libreGluten() })
+
 }
 
